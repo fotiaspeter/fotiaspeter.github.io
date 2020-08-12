@@ -1,0 +1,12 @@
+Change all the <title>Jucie Wrld</title> on all pages
+Change <h1> on After afterdeath
+
+If you want to create a new section create a new article.
+
+If you want to delete a section delete the whole article <article></article>
+
+
+Put all images in articls on photo page 
+make sure there are no red errors
+
+fix any content on other pages 
