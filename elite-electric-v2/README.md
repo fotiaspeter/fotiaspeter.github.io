@@ -1,7 +1,7 @@
-# Elite Electric Services
+# Elite Electric V2
 
 A scroll-animated single-page marketing site for a premium residential &
-commercial electrician.
+commercial electrician. (Version 2 — kept separate from the earlier build.)
 
 ## Stack
 
