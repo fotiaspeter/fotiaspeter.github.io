@@ -36,8 +36,8 @@ export default function Hero() {
       ref={ref}
       className="relative h-screen min-h-[680px] overflow-hidden bg-ink"
     >
-      {/* Van panel — bottom half on mobile, right side on desktop */}
-      <div className="absolute inset-x-0 bottom-0 top-[54%] lg:inset-y-0 lg:left-[55%] lg:right-0 lg:top-0">
+      {/* Van panel — clean band at the bottom on mobile, right side on desktop */}
+      <div className="absolute inset-x-0 bottom-0 top-[66%] overflow-hidden lg:inset-y-0 lg:left-[48%] lg:right-0 lg:top-0">
         <motion.div
           className="absolute inset-0"
           style={{ y: vanY, scale: vanScale }}
@@ -45,18 +45,30 @@ export default function Hero() {
           <img
             src={vanSide}
             alt="The Elite Electric Services van"
-            className="h-full w-full object-cover"
-            style={{ objectPosition: '38% 50%' }}
+            className="h-full w-full object-cover object-[42%_50%]"
           />
         </motion.div>
-        {/* Blend the van into the dark panel toward the text */}
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/30 via-transparent to-ink lg:bg-gradient-to-r lg:from-ink lg:via-ink/30 lg:to-ink/10" />
+        {/* Mobile: fade only the very top edge of the van into the dark */}
+        <div
+          className="absolute inset-0 lg:hidden"
+          style={{
+            background: 'linear-gradient(to bottom, #080c12 0%, rgba(8,12,18,0) 24%)',
+          }}
+        />
+        {/* Desktop: hold the dark across the text side so there is no seam */}
+        <div
+          className="absolute inset-0 hidden lg:block"
+          style={{
+            background:
+              'linear-gradient(to right, #080c12 0%, #080c12 30%, rgba(8,12,18,0.12) 72%, rgba(8,12,18,0) 100%)',
+          }}
+        />
       </div>
 
       {/* Text */}
       <motion.div
         style={{ y: textY, opacity: textOpacity }}
-        className="relative z-10 mx-auto flex h-full max-w-7xl items-start px-5 pt-32 md:px-8 lg:items-center lg:pt-0"
+        className="relative z-10 mx-auto flex h-full max-w-7xl items-start px-5 pt-28 md:px-8 lg:items-center lg:pt-0"
       >
         <div className="w-full lg:max-w-2xl">
           {/* Business name */}
@@ -79,7 +91,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.7, delay: 0.95, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-6 inline-flex items-center gap-2.5 border border-primary/40 bg-primary/10 px-4 py-2"
+            className="mb-6 hidden items-center gap-2.5 border border-primary/40 bg-primary/10 px-4 py-2 lg:inline-flex"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping bg-primary opacity-75" />
@@ -122,7 +134,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.7, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 max-w-md text-base text-white/75 md:text-lg"
+            className="mt-5 max-w-md text-sm text-white/75 sm:text-base md:text-lg"
           >
             Domestic, commercial and industrial electrical work done properly —
             and cleaned up after. Licensed ({SITE.licence}), fully insured, and
@@ -135,7 +147,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.7, delay: 1.05, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center"
+            className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center"
           >
             <button
               onClick={() => scrollToId('contact')}

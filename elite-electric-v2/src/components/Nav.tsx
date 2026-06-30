@@ -30,17 +30,15 @@ export default function Nav() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-        <div className="flex items-center gap-3 md:gap-5">
+        <div className="flex items-center gap-2.5 md:gap-5">
           <button
             onClick={() => go('top')}
-            className="cursor-pointer"
+            className="shrink-0 cursor-pointer"
             aria-label="Elite Electric — back to top"
           >
-            <Logo className="h-11 md:h-12" />
+            <Logo className="h-10 sm:h-11 md:h-12" />
           </button>
-          <div className="hidden md:block">
-            <StatusPill />
-          </div>
+          <StatusPill />
         </div>
 
         <div className="hidden items-center gap-9 md:flex">
@@ -71,11 +69,6 @@ export default function Nav() {
           {menuOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
       </nav>
-
-      {/* Mobile status bar */}
-      <div className="flex justify-center px-4 pb-3 md:hidden">
-        <StatusPill />
-      </div>
 
       <AnimatePresence>
         {menuOpen && (

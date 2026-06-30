@@ -8,9 +8,13 @@ import {
   ShieldCheck,
   BatteryCharging,
   Siren,
+  MoveHorizontal,
   type LucideIcon,
 } from 'lucide-react'
 import SplitHeading from './SplitHeading'
+import BeforeAfterSlider from './BeforeAfterSlider'
+import switchboardBefore from '../assets/switchboard-before.jpg'
+import switchboardAfter from '../assets/switchboard-after.jpg'
 import { scrollToId } from '../site'
 
 type Service = {
@@ -20,6 +24,7 @@ type Service = {
   image: string
   icon: LucideIcon
   points: string[]
+  slider?: { before: string; after: string }
 }
 
 const SERVICES: Service[] = [
@@ -62,6 +67,7 @@ const SERVICES: Service[] = [
       'https://images.unsplash.com/photo-1565608438257-fac3c27beb36?auto=format&fit=crop&w=1800&q=80',
     icon: ShieldCheck,
     points: ['Safety switches (RCDs)', 'Board upgrades', 'Smoke alarms'],
+    slider: { before: switchboardBefore, after: switchboardAfter },
   },
   {
     num: '05',
@@ -165,6 +171,21 @@ function ServiceBlock({ service }: { service: Service }) {
             className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
           />
         </button>
+
+        {service.slider && (
+          <div className="mt-12">
+            <div className="mb-4 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-white/50">
+              <MoveHorizontal size={16} className="text-primary" />
+              Drag to see a real switchboard rewire
+            </div>
+            <BeforeAfterSlider
+              before={service.slider.before}
+              after={service.slider.after}
+              beforeLabel="Before"
+              afterLabel="After"
+            />
+          </div>
+        )}
       </motion.div>
     </article>
   )

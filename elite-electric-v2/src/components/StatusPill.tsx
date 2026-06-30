@@ -33,7 +33,7 @@ export default function StatusPill() {
   const open = mins >= OPEN_MIN && mins < CLOSE_MIN
 
   const weekday = fmt(now, { weekday: 'short' })
-  const date = fmt(now, { day: 'numeric', month: 'short' })
+  const date = `${fmt(now, { day: 'numeric' })} ${fmt(now, { month: 'short' }).slice(0, 3)}`
   const time = fmt(now, { hour: 'numeric', minute: '2-digit', hour12: true })
 
   const base =
@@ -78,8 +78,8 @@ export default function StatusPill() {
         Emergencies<span className="hidden sm:inline"> only</span>
       </span>
       <span className="flex items-center gap-1 font-mono text-[10px] uppercase tracking-wide text-white/70 group-hover:text-white sm:text-[11px] sm:tracking-wider">
-        ·<Phone size={12} className="text-primary" />
-        Call now
+        <Phone size={12} className="text-primary" />
+        <span className="hidden sm:inline">Call now</span>
       </span>
       <Stamp />
     </a>
