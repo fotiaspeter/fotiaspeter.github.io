@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X, Zap } from 'lucide-react'
 import Logo from './Logo'
+import StatusPill from './StatusPill'
 import { NAV_LINKS, scrollToId } from '../site'
 
 export default function Nav() {
@@ -29,13 +30,16 @@ export default function Nav() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-        <button
-          onClick={() => go('top')}
-          className="cursor-pointer"
-          aria-label="Elite Electric — back to top"
-        >
-          <Logo className="h-11 md:h-12" />
-        </button>
+        <div className="flex items-center gap-3 md:gap-5">
+          <button
+            onClick={() => go('top')}
+            className="cursor-pointer"
+            aria-label="Elite Electric — back to top"
+          >
+            <Logo className="h-11 md:h-12" />
+          </button>
+          <StatusPill />
+        </div>
 
         <div className="hidden items-center gap-9 md:flex">
           {NAV_LINKS.map((link) => (
