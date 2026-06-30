@@ -5,7 +5,7 @@ import Marquee from './components/Marquee'
 import Services from './components/Services'
 import Stats from './components/Stats'
 import WhyUs from './components/WhyUs'
-import Testimonials from './components/Testimonials'
+import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import FloatingCTA from './components/FloatingCTA'
@@ -21,7 +21,7 @@ export default function App() {
         <Services />
         <Stats />
         <WhyUs />
-        <Testimonials />
+        <About />
         <Contact />
       </main>
       <Footer />

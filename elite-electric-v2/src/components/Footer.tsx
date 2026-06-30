@@ -23,9 +23,9 @@ export default function Footer() {
       <div className="border-t border-ink-line">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-6 text-center font-mono text-[11px] uppercase tracking-[0.15em] text-white/35 md:flex-row md:justify-between md:px-8 md:text-left">
           <span>
-            © {new Date().getFullYear()} {SITE.name} Services · Lic. No. 000000C
+            © {new Date().getFullYear()} {SITE.name} · {SITE.licence}
           </span>
-          <span>Power, Perfected.</span>
+          <span>Melbourne &amp; all of Victoria</span>
         </div>
       </div>
     </footer>

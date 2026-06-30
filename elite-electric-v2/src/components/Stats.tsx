@@ -8,10 +8,10 @@ type Stat = {
 }
 
 const STATS: Stat[] = [
-  { value: 15, suffix: '+', label: 'Years in Trade' },
-  { value: 3500, suffix: '+', label: 'Jobs Completed' },
-  { value: 45, suffix: 'm', label: 'Avg. Response' },
-  { value: 100, suffix: '%', label: 'Satisfaction' },
+  { value: 120, suffix: '+', label: 'Local jobs completed' },
+  { value: 24, suffix: '/7', label: 'Emergency callouts' },
+  { value: 60, suffix: ' min', label: 'Typical response time' },
+  { value: 100, suffix: '%', label: 'Licensed & insured' },
 ]
 
 export default function Stats() {

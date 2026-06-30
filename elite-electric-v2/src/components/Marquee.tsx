@@ -1,12 +1,12 @@
 const PHRASES = [
-  'Licensed & Insured',
-  '24/7 Emergency Response',
-  'Upfront Pricing',
-  'Lifetime Workmanship Guarantee',
-  'Master Electricians',
-  'Same-Day Callouts',
-  'No Hidden Fees',
-  'Fully Certified',
+  'Licensed REC 36000',
+  'Fully Insured',
+  'Domestic · Commercial · Industrial',
+  '24/7 Emergency Callouts',
+  'Free Written Quotes',
+  'Melbourne & All of Victoria',
+  'Owner Operated',
+  'No Mess Left Behind',
 ]
 
 function Row() {

@@ -2,9 +2,7 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight, Phone, Zap } from 'lucide-react'
 import { SITE, scrollToId } from '../site'
-
-const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=2000&q=80'
+import vanSide from '../assets/van-side.jpg'
 
 const maskReveal = {
   hidden: { y: '115%', skewY: 7 },
@@ -38,18 +36,18 @@ export default function Hero() {
       ref={ref}
       className="relative flex h-screen min-h-[640px] items-center overflow-hidden"
     >
-      {/* Parallax background */}
+      {/* Parallax background — the real Elite Electric van */}
       <motion.div
         className="absolute inset-0 z-0"
         style={{ y: bgY, scale: bgScale }}
       >
         <img
-          src={HERO_IMAGE}
-          alt="Electrician working on a commercial installation"
-          className="h-full w-full object-cover"
+          src={vanSide}
+          alt="The Elite Electric Services work van"
+          className="h-full w-full object-cover object-[70%_center]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/90 to-ink/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/70" />
       </motion.div>
 
       <motion.div
@@ -69,12 +67,12 @@ export default function Hero() {
             <span className="relative inline-flex h-2 w-2 bg-primary" />
           </span>
           <span className="font-mono text-xs uppercase tracking-[0.2em] text-primary">
-            24/7 Emergency Service Available
+            Available 7 days · Melbourne &amp; all of Victoria
           </span>
         </motion.div>
 
         {/* Headline */}
-        <h1 className="text-[18vw] font-extrabold leading-[0.85] tracking-tighter sm:text-[15vw] md:text-[12rem] lg:text-[13rem]">
+        <h1 className="text-[16vw] font-extrabold leading-[0.85] tracking-tighter sm:text-[14vw] md:text-[11rem] lg:text-[12rem]">
           <span className="block overflow-hidden">
             <motion.span
               className="block"
@@ -83,7 +81,7 @@ export default function Hero() {
               animate="visible"
               transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              POWER
+              POWERING
             </motion.span>
           </span>
           <span className="block overflow-hidden">
@@ -94,7 +92,7 @@ export default function Hero() {
               animate="visible"
               transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
-              PERFECTED.
+              MELBOURNE.
             </motion.span>
           </span>
         </h1>
@@ -105,10 +103,11 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           transition={{ duration: 0.7, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-7 max-w-xl text-lg text-white/70 md:text-xl"
+          className="mt-7 max-w-xl text-lg text-white/75 md:text-xl"
         >
-          Premium residential and commercial electrical work. Licensed,
-          insured, and obsessive about doing it right the first time.
+          Domestic, commercial and industrial electrical work done properly —
+          and cleaned up after. Licensed ({SITE.licence}), fully insured, and
+          on the tools across Melbourne and regional Victoria.
         </motion.p>
 
         {/* CTAs */}
@@ -124,7 +123,7 @@ export default function Hero() {
             className="group flex items-center justify-center gap-3 bg-primary px-8 py-4 text-base font-semibold text-ink transition-colors hover:bg-white"
           >
             <Zap size={18} />
-            Request Quote
+            Get a Quote
             <ArrowRight
               size={18}
               className="transition-transform group-hover:translate-x-1"

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
-import { ShieldCheck, Clock, Tag, BadgeCheck, type LucideIcon } from 'lucide-react'
+import { ShieldCheck, Clock, Tag, Sparkles, type LucideIcon } from 'lucide-react'
 import SplitHeading from './SplitHeading'
+import { SITE } from '../site'
 
 type Card = {
   icon: LucideIcon
@@ -11,27 +12,27 @@ type Card = {
 const CARDS: Card[] = [
   {
     icon: ShieldCheck,
-    title: 'Licensed & Insured',
+    title: 'Licensed & insured',
     description:
-      'Fully licensed master electricians backed by comprehensive public liability cover. Zero shortcuts.',
+      `Registered electrical contractor (${SITE.licence}) with full public liability cover. Every job is done to standard and signed off properly.`,
   },
   {
     icon: Clock,
-    title: '24/7 Availability',
+    title: 'Turn up when we say',
     description:
-      'Electrical faults do not keep business hours. Neither do we. Genuine round-the-clock response.',
+      'You get a real time window, not a vague "sometime today". And if it is an emergency, we pick up 24/7.',
   },
   {
     icon: Tag,
-    title: 'Upfront Pricing',
+    title: 'Honest, upfront prices',
     description:
-      'Fixed, written quotes before any work begins. What we quote is what you pay — no surprises.',
+      'A written quote before we start. The number we give you is the number you pay — no surprise extras at the end.',
   },
   {
-    icon: BadgeCheck,
-    title: 'Lifetime Guarantee',
+    icon: Sparkles,
+    title: 'Clean, careful work',
     description:
-      'Every installation is backed by our lifetime workmanship guarantee. We stand behind the work.',
+      'Drop sheets down, boots off inside, and the site left tidy. You should barely know we were there — except the power works.',
   },
 ]
 
@@ -45,8 +46,8 @@ export default function WhyUs() {
             Why Elite
           </span>
           <SplitHeading
-            text="Built On Trust And Tidy Work."
-            highlight={[1]}
+            text="A sparky you can actually count on."
+            highlight={[5]}
             className="mt-4 text-5xl font-extrabold leading-[0.95] tracking-tight md:text-7xl"
           />
           <motion.p
@@ -56,8 +57,9 @@ export default function WhyUs() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-7 max-w-md text-lg text-white/55"
           >
-            We are the electricians other tradies recommend. Reliable, clean,
-            and straight with you from the first call to final sign-off.
+            No call centres, no runaround. You deal with the same team from the
+            first phone call to the final sign-off — and we treat your place
+            like it is our own.
           </motion.p>
         </div>
 
@@ -70,7 +72,7 @@ export default function WhyUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group relative border border-ink-line bg-ink-soft p-7 transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_40px_-8px_rgba(0,194,232,0.45)]"
+              className="group relative border border-ink-line bg-ink-soft p-7 transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_40px_-8px_rgba(26,168,232,0.5)]"
             >
               <card.icon
                 size={34}

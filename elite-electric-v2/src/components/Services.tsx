@@ -14,57 +14,57 @@ type Service = {
 const SERVICES: Service[] = [
   {
     num: '01',
-    title: 'Residential Wiring',
+    title: 'Domestic Electrical',
     description:
-      'Full rewires, new circuits, lighting design and smart-home integration for homes built to last. Tidy, certified, code-perfect work.',
+      'Power points, lighting, ceiling fans, rewires and renovation work for homes and units. Whether it is one dodgy switch or a whole-house rewire, it gets done neat and to standard.',
     image:
       'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1400&q=80',
-    points: ['New builds & renovations', 'Smart lighting', 'Surge protection'],
+    points: ['Renovations & extensions', 'Power & lighting', 'Ceiling fans'],
   },
   {
     num: '02',
-    title: 'Commercial Fit-outs',
+    title: 'Commercial Electrical',
     description:
-      'Office, retail and hospitality fit-outs delivered on schedule. Three-phase power, data, and lighting that keep your business running.',
+      'Fit-outs and electrical work for offices, shops, cafes and warehouses. We work around your trading hours so the lights stay on and the business keeps running.',
     image:
       'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=80',
-    points: ['Three-phase power', 'Data & comms', 'Project managed'],
+    points: ['Shop & office fit-outs', 'Three-phase power', 'After-hours work'],
   },
   {
     num: '03',
-    title: 'EV Charger Installs',
+    title: 'Industrial Electrical',
     description:
-      'Home and workplace EV charging, properly load-balanced and future-proofed. Certified installers for all major charger brands.',
+      'Factories, plant and machinery, three-phase installs and fault-finding. Heavier work that needs to be done right the first time and signed off properly.',
     image:
-      'https://images.unsplash.com/photo-1647500666543-2d4f6cef5e54?auto=format&fit=crop&w=1400&q=80',
-    points: ['All major brands', 'Load balancing', 'Rebate assistance'],
+      'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1400&q=80',
+    points: ['Machine wiring', 'Three-phase installs', 'Plant maintenance'],
   },
   {
     num: '04',
-    title: 'Emergency Callouts',
+    title: 'Switchboards & Safety',
     description:
-      'Power out? Burning smell? Tripped board at 2am? We answer. Rapid response electricians on call around the clock, every day.',
+      'Old ceramic fuses and failing boards swapped for modern switchboards with proper safety switches. Plus smoke alarms and compliance work to keep the family safe.',
     image:
-      'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1400&q=80',
-    points: ['45-minute response', 'Available 24/7', 'Fault finding'],
+      'https://images.unsplash.com/photo-1565608438257-fac3c27beb36?auto=format&fit=crop&w=1400&q=80',
+    points: ['Safety switches (RCDs)', 'Board upgrades', 'Smoke alarms'],
   },
   {
     num: '05',
-    title: 'Switchboard Upgrades',
+    title: 'EV Charger Installs',
     description:
-      'Old fuses and failing boards replaced with modern, safety-switched switchboards. Protect your property and meet current standards.',
+      'Home and workplace EV charging, properly load-balanced so it plays nicely with the rest of the house. Certified for all the major charger brands.',
     image:
-      'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1400&q=80',
-    points: ['Safety switches', 'Compliance upgrades', 'Capacity expansion'],
+      'https://images.unsplash.com/photo-1647500666543-2d4f6cef5e54?auto=format&fit=crop&w=1400&q=80',
+    points: ['All major brands', 'Load balancing', 'Rebate help'],
   },
   {
     num: '06',
-    title: 'Safety Inspections',
+    title: 'Repairs & Emergencies',
     description:
-      'Pre-purchase, rental compliance and periodic safety inspections with detailed reporting. Know your wiring is safe — with proof.',
+      'Lost power, tripping switches, burning smells or a board that keeps cutting out? Call any time — fault-finding and 24/7 callouts across Melbourne and Victoria.',
     image:
-      'https://images.unsplash.com/photo-1565608438257-fac3c27beb36?auto=format&fit=crop&w=1400&q=80',
-    points: ['Detailed reporting', 'Rental compliance', 'Thermal imaging'],
+      'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1400&q=80',
+    points: ['24/7 callouts', 'Fault finding', 'Test & tag'],
   },
 ]
 
@@ -163,8 +163,9 @@ export default function Services() {
           className="mt-4 max-w-2xl text-5xl font-extrabold leading-[0.95] tracking-tight md:text-7xl"
         />
         <p className="mt-6 max-w-xl text-lg text-white/55">
-          From a single power point to a full commercial fit-out, our master
-          electricians bring the same standard to every project.
+          From a single power point to a full factory fit-out, you get the same
+          thing every time: licensed work, a fair price, and a tidy site when we
+          leave.
         </p>
       </div>
 

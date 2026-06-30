@@ -1,17 +1,17 @@
 import { useState, type FormEvent } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Check, Clock, MapPin, Phone } from 'lucide-react'
+import { Check, Clock, Mail, MapPin, Phone } from 'lucide-react'
 import SplitHeading from './SplitHeading'
 import { SITE } from '../site'
 
 const SERVICES = [
-  'Residential Wiring',
-  'Commercial Fit-out',
-  'EV Charger Install',
-  'Emergency Callout',
-  'Switchboard Upgrade',
-  'Safety Inspection',
-  'Something Else',
+  'Domestic electrical',
+  'Commercial electrical',
+  'Industrial electrical',
+  'Switchboard / safety',
+  'EV charger install',
+  'Repair / emergency',
+  'Something else',
 ]
 
 type Status = 'idle' | 'submitting' | 'success'
@@ -36,13 +36,13 @@ export default function Contact() {
             Get a Quote
           </span>
           <SplitHeading
-            text="Let's Get You Powered."
-            highlight={[3]}
+            text="Get a quote today."
+            highlight={[2]}
             className="mt-4 text-5xl font-extrabold leading-[0.95] tracking-tight md:text-7xl"
           />
           <p className="mt-6 max-w-md text-lg text-white/55">
-            Tell us about your project and we will get back to you with a fixed,
-            upfront quote — usually the same day.
+            Tell Dimitry what you need and you will get a straight answer and a
+            written quote — usually the same day. For emergencies, just call.
           </p>
 
           <div className="mt-10 space-y-px border border-ink-line">
@@ -53,10 +53,24 @@ export default function Contact() {
               <Phone size={22} className="text-primary" />
               <div>
                 <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">
-                  Call Anytime
+                  Call or text
                 </div>
                 <div className="text-lg font-semibold group-hover:text-primary">
                   {SITE.phone}
+                </div>
+              </div>
+            </a>
+            <a
+              href={SITE.emailHref}
+              className="group flex items-center gap-4 border-b border-ink-line p-5 transition-colors hover:bg-primary/5"
+            >
+              <Mail size={22} className="text-primary" />
+              <div className="min-w-0">
+                <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">
+                  Email
+                </div>
+                <div className="truncate text-lg font-semibold group-hover:text-primary">
+                  {SITE.email}
                 </div>
               </div>
             </a>
@@ -64,7 +78,7 @@ export default function Contact() {
               <MapPin size={22} className="text-primary" />
               <div>
                 <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">
-                  Service Area
+                  Service area
                 </div>
                 <div className="text-lg font-semibold">{SITE.area}</div>
               </div>
@@ -99,10 +113,10 @@ export default function Contact() {
                 >
                   <Check size={44} className="text-ink" strokeWidth={3} />
                 </motion.div>
-                <h3 className="mt-8 text-3xl font-extrabold">Request Sent.</h3>
+                <h3 className="mt-8 text-3xl font-extrabold">Request sent.</h3>
                 <p className="mt-3 max-w-xs text-white/55">
-                  Thanks — one of our electricians will be in touch shortly to
-                  confirm your quote.
+                  Thanks — Dimitry will be in touch shortly to sort out your
+                  quote. If it is urgent, give us a call.
                 </p>
                 <button
                   onClick={() => setStatus('idle')}
