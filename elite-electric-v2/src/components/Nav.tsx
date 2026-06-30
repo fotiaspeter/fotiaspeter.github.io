@@ -34,7 +34,7 @@ export default function Nav() {
           className="cursor-pointer"
           aria-label="Elite Electric — back to top"
         >
-          <Logo />
+          <Logo className="h-11 md:h-12" />
         </button>
 
         <div className="hidden items-center gap-9 md:flex">

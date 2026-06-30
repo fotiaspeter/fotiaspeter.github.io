@@ -17,25 +17,6 @@ const STATS: Stat[] = [
 export default function Stats() {
   return (
     <section className="relative overflow-hidden bg-primary text-ink">
-      {/* Animated vertical lines in background */}
-      <div className="pointer-events-none absolute inset-0">
-        {Array.from({ length: 12 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute top-0 h-full w-px bg-ink/10"
-            style={{ left: `${(i + 1) * (100 / 13)}%` }}
-            initial={{ scaleY: 0, originY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 1,
-              delay: i * 0.05,
-              ease: [0.16, 1, 0.3, 1],
-            }}
-          />
-        ))}
-      </div>
-
       <div className="relative mx-auto grid max-w-7xl grid-cols-2 gap-y-12 px-5 py-16 md:px-8 md:py-20 lg:grid-cols-4">
         {STATS.map((stat, i) => (
           <motion.div
