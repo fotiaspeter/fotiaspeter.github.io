@@ -93,7 +93,9 @@ function ServiceImage({ service }: { service: Service }) {
     offset: ['start 0.95', 'center 0.6'],
   })
   const opacity = useTransform(scrollYProgress, [0, 1], [0, 1])
-  const scale = useTransform(scrollYProgress, [0, 1], [1.15, 1])
+  // Slides to the right (starts shifted left) while fading in. A constant
+  // slight zoom keeps the edges covered through the whole slide.
+  const x = useTransform(scrollYProgress, [0, 1], ['-8%', '0%'])
 
   return (
     <div
@@ -103,7 +105,7 @@ function ServiceImage({ service }: { service: Service }) {
       <motion.img
         src={service.image}
         alt={service.title}
-        style={{ opacity, scale }}
+        style={{ opacity, x, scale: 1.16 }}
         className="absolute inset-0 h-full w-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/15 to-ink/40" />
