@@ -1,7 +1,10 @@
 import logoUrl from '../assets/logo-full.png'
 
 type LogoProps = {
-  /** Tailwind height class for the logo image, e.g. "h-12". */
+  /**
+   * Tailwind sizing classes for the logo image. Constrain ONE dimension
+   * (e.g. "h-12" or "w-64") and the image keeps its aspect ratio.
+   */
   className?: string
 }
 
@@ -15,7 +18,7 @@ export default function Logo({ className = 'h-12' }: LogoProps) {
     <img
       src={logoUrl}
       alt="Elite Electric Services"
-      className={`${className} w-auto shrink-0 select-none`}
+      className={`${className} shrink-0 select-none`}
       draggable={false}
     />
   )

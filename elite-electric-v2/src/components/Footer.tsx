@@ -4,10 +4,10 @@ import { NAV_LINKS, SITE, scrollToId } from '../site'
 export default function Footer() {
   return (
     <footer className="border-t border-ink-line bg-ink">
-      <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 px-5 py-12 md:flex-row md:items-center md:justify-between md:px-8">
-        <Logo className="h-11" />
+      <div className="mx-auto flex max-w-7xl flex-col items-center gap-10 px-5 py-12 md:flex-row md:items-center md:justify-between md:gap-8 md:px-8">
+        <Logo className="w-64 sm:w-72 md:h-14 md:w-auto" />
 
-        <nav className="flex flex-wrap gap-x-8 gap-y-3">
+        <nav className="flex flex-wrap justify-center gap-x-8 gap-y-3">
           {NAV_LINKS.map((link) => (
             <button
               key={link.id}
