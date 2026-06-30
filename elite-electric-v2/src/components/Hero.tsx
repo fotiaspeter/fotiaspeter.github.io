@@ -59,12 +59,26 @@ export default function Hero() {
         className="relative z-10 mx-auto flex h-full max-w-7xl items-start px-5 pt-28 md:px-8 lg:items-center lg:pt-0"
       >
         <div className="w-full lg:max-w-2xl">
+          {/* Business name */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-4 flex items-center gap-3"
+          >
+            <span className="h-6 w-1 bg-primary" />
+            <span className="text-xl font-extrabold uppercase tracking-tight sm:text-2xl">
+              Elite Electric <span className="text-primary">Services</span>
+            </span>
+          </motion.div>
+
           {/* Badge */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 0.7, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.7, delay: 0.95, ease: [0.16, 1, 0.3, 1] }}
             className="mb-6 inline-flex items-center gap-2.5 border border-primary/40 bg-primary/10 px-4 py-2"
           >
             <span className="relative flex h-2 w-2">
