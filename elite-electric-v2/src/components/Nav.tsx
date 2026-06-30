@@ -38,7 +38,9 @@ export default function Nav() {
           >
             <Logo className="h-11 md:h-12" />
           </button>
-          <StatusPill />
+          <div className="hidden md:block">
+            <StatusPill />
+          </div>
         </div>
 
         <div className="hidden items-center gap-9 md:flex">
@@ -69,6 +71,11 @@ export default function Nav() {
           {menuOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
       </nav>
+
+      {/* Mobile status bar */}
+      <div className="flex justify-center px-4 pb-3 md:hidden">
+        <StatusPill />
+      </div>
 
       <AnimatePresence>
         {menuOpen && (

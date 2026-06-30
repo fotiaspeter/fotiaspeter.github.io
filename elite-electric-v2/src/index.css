@@ -17,6 +17,14 @@
   border-radius: 0 !important;
 }
 
+/* Opt-in rounded corners (overrides the global sharp-edge rule) */
+.is-pill {
+  border-radius: 9999px !important;
+}
+.is-dot {
+  border-radius: 9999px !important;
+}
+
 html {
   scroll-behavior: smooth;
 }

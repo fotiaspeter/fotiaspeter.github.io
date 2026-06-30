@@ -18,19 +18,8 @@ function melbourneMinutes(now: Date) {
   return hh * 60 + mm
 }
 
-function melbourneStamp(now: Date) {
-  return now
-    .toLocaleString('en-AU', {
-      timeZone: TZ,
-      weekday: 'short',
-      day: 'numeric',
-      month: 'short',
-      hour: 'numeric',
-      minute: '2-digit',
-      hour12: true,
-    })
-    .toUpperCase()
-}
+const fmt = (now: Date, opts: Intl.DateTimeFormatOptions) =>
+  now.toLocaleString('en-AU', { timeZone: TZ, ...opts }).toUpperCase()
 
 export default function StatusPill() {
   const [now, setNow] = useState(() => new Date())
@@ -42,24 +31,35 @@ export default function StatusPill() {
 
   const mins = melbourneMinutes(now)
   const open = mins >= OPEN_MIN && mins < CLOSE_MIN
-  const stamp = melbourneStamp(now)
+
+  const weekday = fmt(now, { weekday: 'short' })
+  const date = fmt(now, { day: 'numeric', month: 'short' })
+  const time = fmt(now, { hour: 'numeric', minute: '2-digit', hour12: true })
 
   const base =
-    'flex items-center gap-2.5 border border-ink-line bg-ink-soft/80 px-3 py-1.5 backdrop-blur-sm'
+    'is-pill flex items-center gap-2 border border-ink-line bg-ink-soft/85 px-3 py-1.5 backdrop-blur-sm whitespace-nowrap sm:gap-2.5 sm:px-4'
+  const label =
+    'font-mono text-[10px] font-bold uppercase tracking-wide sm:text-[11px] sm:tracking-wider'
+  const meta =
+    'font-mono text-[10px] uppercase tracking-wide text-white/45 sm:text-[11px] sm:tracking-wider'
+
+  // Weekday only shows on wider screens to keep narrow phones tidy.
+  const Stamp = () => (
+    <span className={meta}>
+      · <span className="hidden sm:inline">{weekday}, </span>
+      {date}, {time}
+    </span>
+  )
 
   if (open) {
     return (
       <div className={base}>
         <span className="relative flex h-2.5 w-2.5">
-          <span className="absolute inline-flex h-full w-full animate-ping bg-green-400 opacity-75" />
-          <span className="relative inline-flex h-2.5 w-2.5 bg-green-400" />
+          <span className="is-dot absolute inline-flex h-full w-full animate-ping bg-green-400 opacity-75" />
+          <span className="is-dot relative inline-flex h-2.5 w-2.5 bg-green-400" />
         </span>
-        <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-green-400">
-          Now Open!
-        </span>
-        <span className="hidden font-mono text-[11px] uppercase tracking-wider text-white/40 sm:inline">
-          · {stamp}
-        </span>
+        <span className={`${label} text-green-400`}>Now Open!</span>
+        <Stamp />
       </div>
     )
   }
@@ -71,20 +71,17 @@ export default function StatusPill() {
       aria-label={`After hours — emergencies only. Call ${SITE.phone}`}
     >
       <span className="relative flex h-2.5 w-2.5">
-        <span className="absolute inline-flex h-full w-full animate-ping bg-red-500 opacity-60" />
-        <span className="relative inline-flex h-2.5 w-2.5 bg-red-500" />
+        <span className="is-dot absolute inline-flex h-full w-full animate-ping bg-red-500 opacity-60" />
+        <span className="is-dot relative inline-flex h-2.5 w-2.5 bg-red-500" />
       </span>
-      <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-red-400">
-        Emergencies only
+      <span className={`${label} text-red-400`}>
+        Emergencies<span className="hidden sm:inline"> only</span>
       </span>
-      <span className="flex items-center gap-1 font-mono text-[11px] uppercase tracking-wider text-white/70 group-hover:text-white">
-        <span className="hidden sm:inline">·</span>
-        <Phone size={12} className="text-primary" />
+      <span className="flex items-center gap-1 font-mono text-[10px] uppercase tracking-wide text-white/70 group-hover:text-white sm:text-[11px] sm:tracking-wider">
+        ·<Phone size={12} className="text-primary" />
         Call now
       </span>
-      <span className="hidden font-mono text-[11px] uppercase tracking-wider text-white/40 lg:inline">
-        · {stamp}
-      </span>
+      <Stamp />
     </a>
   )
 }

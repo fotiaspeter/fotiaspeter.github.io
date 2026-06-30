@@ -56,7 +56,7 @@ export default function Hero() {
       {/* Text */}
       <motion.div
         style={{ y: textY, opacity: textOpacity }}
-        className="relative z-10 mx-auto flex h-full max-w-7xl items-start px-5 pt-28 md:px-8 lg:items-center lg:pt-0"
+        className="relative z-10 mx-auto flex h-full max-w-7xl items-start px-5 pt-32 md:px-8 lg:items-center lg:pt-0"
       >
         <div className="w-full lg:max-w-2xl">
           {/* Business name */}
