@@ -37,11 +37,11 @@ export default function StatusPill() {
   const time = fmt(now, { hour: 'numeric', minute: '2-digit', hour12: true })
 
   const base =
-    'is-pill flex items-center gap-2 border border-ink-line bg-ink-soft/85 px-3 py-1.5 backdrop-blur-sm whitespace-nowrap sm:gap-2.5 sm:px-4'
+    'is-pill flex items-center gap-1.5 border border-ink-line bg-ink-soft/85 px-2 py-1 backdrop-blur-sm whitespace-nowrap sm:gap-2 sm:px-3 sm:py-1.5'
   const label =
-    'font-mono text-[10px] font-bold uppercase tracking-wide sm:text-[11px] sm:tracking-wider'
+    'font-mono text-[9px] font-bold uppercase tracking-wide sm:text-[10px] sm:tracking-wider'
   const meta =
-    'font-mono text-[10px] uppercase tracking-wide text-white/45 sm:text-[11px] sm:tracking-wider'
+    'font-mono text-[9px] uppercase tracking-wide text-white/45 sm:text-[10px] sm:tracking-wider'
 
   // Weekday only shows on wider screens to keep narrow phones tidy.
   const Stamp = () => (
@@ -54,9 +54,9 @@ export default function StatusPill() {
   if (open) {
     return (
       <div className={base}>
-        <span className="relative flex h-2.5 w-2.5">
+        <span className="relative flex h-2 w-2">
           <span className="is-dot absolute inline-flex h-full w-full animate-ping bg-green-400 opacity-75" />
-          <span className="is-dot relative inline-flex h-2.5 w-2.5 bg-green-400" />
+          <span className="is-dot relative inline-flex h-2 w-2 bg-green-400" />
         </span>
         <span className={`${label} text-green-400`}>Now Open!</span>
         <Stamp />
@@ -70,15 +70,13 @@ export default function StatusPill() {
       className={`${base} group transition-colors hover:border-red-500/60`}
       aria-label={`After hours — emergencies only. Call ${SITE.phone}`}
     >
-      <span className="relative flex h-2.5 w-2.5">
+      <span className="relative flex h-2 w-2">
         <span className="is-dot absolute inline-flex h-full w-full animate-ping bg-red-500 opacity-60" />
-        <span className="is-dot relative inline-flex h-2.5 w-2.5 bg-red-500" />
+        <span className="is-dot relative inline-flex h-2 w-2 bg-red-500" />
       </span>
-      <span className={`${label} text-red-400`}>
-        Emergencies<span className="hidden sm:inline"> only</span>
-      </span>
-      <span className="flex items-center gap-1 font-mono text-[10px] uppercase tracking-wide text-white/70 group-hover:text-white sm:text-[11px] sm:tracking-wider">
-        <Phone size={12} className="text-primary" />
+      <span className={`${label} text-red-400`}>Emergencies only</span>
+      <span className="flex items-center gap-1 font-mono text-[9px] uppercase tracking-wide text-white/70 group-hover:text-white sm:text-[10px] sm:tracking-wider">
+        <Phone size={10} className="text-primary" />
         <span className="hidden sm:inline">Call now</span>
       </span>
       <Stamp />
